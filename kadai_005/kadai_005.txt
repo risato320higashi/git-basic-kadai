@@ -1,0 +1,72 @@
+PS C:\Users\ritsu\OneDrive\ドキュメント\GitHub\git_challenge> git init                
+Initialized empty Git repository in C:/Users/ritsu/OneDrive/ドキュメント/GitHub/git_challenge/.git/
+PS C:\Users\ritsu\OneDrive\ドキュメント\GitHub\git_challenge> git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        hello_world.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\ritsu\OneDrive\ドキュメント\GitHub\git_challenge> git add .
+PS C:\Users\ritsu\OneDrive\ドキュメント\GitHub\git_challenge> git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   hello_world.txt
+
+PS C:\Users\ritsu\OneDrive\ドキュメント\GitHub\git_challenge> git diff --staged
+diff --git a/hello_world.txt b/hello_world.txt
+new file mode 100644
+index 0000000..5dd01c1
+--- /dev/null
++++ b/hello_world.txt
+@@ -0,0 +1 @@
++Hello, world!
+\ No newline at end of file
+PS C:\Users\ritsu\OneDrive\ドキュメント\GitHub\git_challenge> git commit -m "hello_world.txtを追加"
+[master (root-commit) 5dce886] hello_world.txtを追加
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello_world.txt
+PS C:\Users\ritsu\OneDrive\ドキュメント\GitHub\git_challenge> git diff hello_world.txt
+diff --git a/hello_world.txt b/hello_world.txt
+index 5dd01c1..7176e67 100644
+--- a/hello_world.txt
++++ b/hello_world.txt
+@@ -1 +1,2 @@
+-Hello, world!
+\ No newline at end of file
++Hello, world!^M
++こんにちは、世界！
+\ No newline at end of file
+PS C:\Users\ritsu\OneDrive\ドキュメント\GitHub\git_challenge> git add hello_world.txt
+PS C:\Users\ritsu\OneDrive\ドキュメント\GitHub\git_challenge> git status       
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   hello_world.txt
+
+PS C:\Users\ritsu\OneDrive\ドキュメント\GitHub\git_challenge> git commit -m "日本語訳を追記"
+[master 018a23d] 日本語訳を追記
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS C:\Users\ritsu\OneDrive\ドキュメント\GitHub\git_challenge> git log
+commit 018a23d3c0a3e8db76c98b4194cbd41de6805c5b (HEAD -> master)
+Author: risato320higashi <ritsu320gg@gmail.com>
+Date:   Mon Jun 9 11:58:58 2025 +0900
+
+    日本語訳を追記
+
+commit 5dce8864f0fd0927dc61e7dbef84e5f903405b1d
+Author: risato320higashi <ritsu320gg@gmail.com>
+Date:   Mon Jun 9 11:57:23 2025 +0900
+
+    hello_world.txtを追加
+PS C:\Users\ritsu\OneDrive\ドキュメント\GitHub\git_challenge> git log --oneline
+018a23d (HEAD -> master) 日本語訳を追記
+5dce886 hello_world.txtを追加
+PS C:\Users\ritsu\OneDrive\ドキュメント\GitHub\git_challenge> 
